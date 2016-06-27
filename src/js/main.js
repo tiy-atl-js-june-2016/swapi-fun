@@ -38,3 +38,13 @@ var button = $(".get-planet").on('click', function (event) {
   getPlanet(count);
   count++;
 });
+
+var movies = $.ajax({
+  url: baseURL + 'films/' + 1,
+  dataType: "json"
+});
+movies.then(function (data) {
+  $(".movies").append(`<p class="red">${data.title}</p>`);
+}, function (error) {
+  console.log("bad things happened: " + error);
+});
