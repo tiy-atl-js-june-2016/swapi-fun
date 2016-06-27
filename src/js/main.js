@@ -25,8 +25,7 @@ function getPlanet (id) {
 };
 
 function addPlanetToPage (data) {
-  count++;
-  console.log(count, data);
+  console.log(data);
   $(".planets").append(planetTemplate(data));
 };
 
@@ -37,4 +36,5 @@ function planetTemplate (planet) {
 var button = $(".get-planet").on('click', function (event) {
   event.preventDefault();
   getPlanet(count);
+  count++;
 });
